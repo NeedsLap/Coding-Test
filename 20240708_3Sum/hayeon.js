@@ -5,7 +5,7 @@ const threeSum = function(nums) {
 
   for (let i = 0; i < nums.length - 2; i++) {
     if (nums[i] === nums[i - 1]) {
-      continue;
+      continue; // 중복된 값 스킵
     }
 
     let left = i + 1, right = nums.length - 1;
@@ -17,7 +17,7 @@ const threeSum = function(nums) {
         answer.push([nums[i], nums[left], nums[right]]);
 
 	while (nums[left] === nums[left + 1]) {
-	  left++;
+	  left++; // 동일한 값 스킵
 	}
 
 	while (nums[right] === nums[right - 1]) {
@@ -27,7 +27,7 @@ const threeSum = function(nums) {
 	left++;
 	right--;
       } else if (sum < 0) {
-	left++;
+	left++; // sum을 더 키우기 위해 우측으로 이동
       } else {
 	right--;
       }
