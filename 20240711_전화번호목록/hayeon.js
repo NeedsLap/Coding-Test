@@ -1,4 +1,4 @@
-// 가장 답
+// 빠른 답
 function solution(phone_book) {
     phone_book.sort();
     
