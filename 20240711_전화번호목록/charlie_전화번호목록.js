@@ -3,8 +3,8 @@
 // n은 전화번호의 개수, m은 가장 긴 전화번호의 길이
 function solution(phone_book) {
   for (let i = 0; i < phone_book.length - 1; i++) {
-    for (let j = i + 1; j < phone_book.length; j++) {
-      if (phone_book[j].indexOf(phone_book[i]) === 0) return false;
+    for (let j = 0; j < phone_book.length; j++) {
+      if (i !== j && phone_book[j].indexOf(phone_book[i]) === 0) return false;
     }
   }
   return true;
