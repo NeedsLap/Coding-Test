@@ -27,8 +27,8 @@ var lengthOfLongestSubstring = function (s) {
   const storage = new Map();
   let max = 0;
 
-  let left = 0;
-  right = 0;
+  let left = 0,
+    right = 0;
   while (right < s.length) {
     if (storage.has(s[right])) {
       left = Math.max(left, storage.get(s[right]) + 1);
