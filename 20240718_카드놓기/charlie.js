@@ -76,7 +76,6 @@ const set = new Set();
 
 function recursive(current, count, remainNums) {
   if (count === k) {
-    console.log(current);
     set.add(current);
     return;
   }
