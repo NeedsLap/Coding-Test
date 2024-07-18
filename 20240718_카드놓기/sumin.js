@@ -14,7 +14,7 @@ for (let i = 0; i < n; i++) {
       }
       for (let z = 0; z < n; z++) {
         if (
-          k === 4 &&
+          +k === 4 &&
           i !== j &&
           i !== o &&
           i !== z &&
