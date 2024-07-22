@@ -20,12 +20,9 @@ function solution(genres, plays) {
 
     
     let bestAlbum = [];
-    sortedGenres.forEach(genre => {
-        let sortedSongs = genreMap[genre].sort((a, b) => b.play - a.play );
-        bestAlbum.push(sortedSongs[0].index);
-        if (sortedSongs[1]) {
-            bestAlbum.push(sortedSongs[1].index);
-        }
+        sortedGenres.forEach(genre => {
+        let sortedSongs = genreMap[genre].sort((a, b) => b.play - a.play);
+        sortedSongs.slice(0, 2).forEach(song => bestAlbum.push(song.index));
     });
 
     return bestAlbum;
