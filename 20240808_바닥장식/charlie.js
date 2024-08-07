@@ -149,7 +149,7 @@ for (let x = 0; x < N; x++) {
 }
 console.log(count);
 
-// <-- 바닥장식 -->
+// <-- 바이러스 -->
 // BFS
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim();
