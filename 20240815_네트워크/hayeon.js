@@ -12,10 +12,10 @@ function solution(n, computers) {
         }
           
         if (x === y) {
-          computers[x][y] = 0;
+          computers[x][y] = 0; // 노드 방문 처리
         } else {
-          computers[x][y] = computers[y][x] = 0;
-          stack.push(y);
+          computers[x][y] = computers[y][x] = 0; // 연결된 노드 방문 처리
+          stack.push(y); // 연결된 노드에 연결된 노드를 탐색하기 위해 stack에 push
         }
       });
     }
@@ -24,7 +24,7 @@ function solution(n, computers) {
 
   let answer = 0;
   computers.forEach((_, i) => {
-    if (computers[i][i] === 1) {
+    if (computers[i][i] === 1) { // 아직 방문하지 않은 노드라면
       dfs(i);
       answer += 1;
     } 
