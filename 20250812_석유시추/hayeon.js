@@ -1,4 +1,5 @@
-// 섬의 개수
+// ---------- 섬의 개수 ---------- //
+// DFS 재귀
 const numIslands = function(grid) {
   const dfs = (i, j) => {
     if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] !== '1') {
@@ -27,7 +28,44 @@ const numIslands = function(grid) {
   return count;
 };
 
-// 석유시추
+// DFS 스택
+const numIslands = function(grid) {
+  const dfs = (i, j) => {
+    const stack = [[i, j]];
+
+    while (stack.length) {
+      const [x, y] = stack.pop();
+
+      if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] !== '1') {
+        continue;
+      }
+
+      grid[x][y] = 0;
+      stack.push([x + 1, y]);
+      stack.push([x - 1, y]);
+      stack.push([x, y + 1]);
+      stack.push([x, y - 1]);
+    }
+  };
+
+  let count = 0;
+
+  grid.forEach((row, i) => {
+    row.forEach((item, j) => {
+      if (item === '1') {
+        dfs(i, j);
+        count += 1;
+      } 
+    });
+  });
+
+  return count;
+};
+
+// BFS
+
+
+// ---------- 석유시추 ---------- //
 function solution(land) {
   const dfs = (i, j, positions) => {
     const stack = [[i, j]];
