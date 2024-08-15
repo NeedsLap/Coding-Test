@@ -19,7 +19,6 @@ function solution(n, computers) {
         }
       });
     }
-      
   };
 
   let answer = 0;
