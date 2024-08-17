@@ -54,7 +54,7 @@ function solution(n, computers) {
 
 // BFS
 function solution(n, computers) {
-  const dfs = (i) => {
+  const bfs = (i) => {
     const queue = [i];
 
     while (queue.length) {
@@ -78,7 +78,7 @@ function solution(n, computers) {
   let answer = 0;
   computers.forEach((_, i) => {
     if (computers[i][i] === 1) {
-      dfs(i);
+      bfs(i);
       answer += 1;
     } 
   });
